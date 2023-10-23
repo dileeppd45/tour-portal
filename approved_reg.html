@@ -1,0 +1,26 @@
+{% extends 'atbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+<h2>Approved Taxi Registrations</h2>
+<table class="table">
+  <tr>
+    <th>Sl No</th>
+      <th>Taxi Id</th>
+    <th>Taxi No</th>
+    <th></th>
+  </tr>
+  {% for data in cdata %}
+  <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{data.0}}</td>
+    <td>{{data.1}}</td>
+
+    <td><a href="../approve_view_taxi/{{data.0}}">View</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock content %}
+
+

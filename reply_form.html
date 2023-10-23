@@ -1,0 +1,43 @@
+{% extends 'pcbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+  <div>
+    <div align="center"><h2>Reply Complaints</h2></div>
+  <form action="../reply_submit/{{data.0}}" method="post">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <th>
+          <label class="text-success">User Name :</label>
+        </th>
+        <td>
+          <input type="text"  name="un" value="{{data.1}}" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label class="text-success">Complaint :</label>
+        </th>
+        <td>
+          <input type="text"  name="fb" value="{{data.2}}" readonly>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label class="text-success">Reply  :</label>
+        </th>
+        <td>
+          <textarea type="text" name="reply" placeholder="Reply Here" required></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Submit" class="btn btn-success"></td>
+      </tr>
+    </table>
+
+  </form>
+</div>
+</div>
+{% endblock content %}

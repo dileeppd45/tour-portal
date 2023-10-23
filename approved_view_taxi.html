@@ -1,0 +1,46 @@
+{% extends 'atbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+<h2>Approved Registrations</h2>
+<table style="width:80%" class="table">
+
+    <tr>
+        <th>Taxi No</th>
+        <td> {{data.1}} </td>
+    </tr>
+    <tr>
+        <th>Owner</th>
+        <td> {{data.3}}  </td>
+    </tr>
+    <tr>
+        <th>Adhar No</th>
+        <td> {{data.2}}  </td>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td><p>{{data.4}}</p><p>{{data.s}}</p></td>
+    </tr>
+    <tr>
+        <th>Place</th>
+        <td> {{data.7}}  </td>
+    </tr>
+    <tr>
+        <th>District</th>
+        <td> {{data.8}} </td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td> {{data.6}}  </td>
+    </tr>
+
+<tr>
+    <td></td>
+    <td>
+        <a href="../approve_delete_taxi/{{data.0}}">Remove</a>
+        <a href="../approve_reject_taxi/{{data.0}}">Reject</a>
+    </td>
+</tr>
+</table>
+</div>
+{% endblock content %}
